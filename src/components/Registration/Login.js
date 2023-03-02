@@ -15,6 +15,11 @@ const Login = () => (
           <button type="button" className="bg-black bg-opacity-30 text-slate-300 py-2 px-6 mt-4 rounded-full hover:bg-white hover:text-black">HOME</button>
         </Link>
       </div>
+      <div className="absolute top-0 right-5 sm:right-20 flex gap-4">
+        <Link to="/signup">
+          <button type="button" className="bg-black bg-opacity-30 text-slate-300 py-2 px-6 mt-4 rounded-full hover:bg-white hover:text-black">SIGN UP</button>
+        </Link>
+      </div>
     </div>
   </section>
 );

@@ -621,6 +621,10 @@ video {
   top: 0px;
 }
 
+.right-5 {
+  right: 1.25rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -680,6 +684,16 @@ video {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
+.bg-green {
+  --tw-bg-opacity: 1;
+  background-color: rgb(152 190 15 / var(--tw-bg-opacity));
+}
+
 .bg-orange {
   --tw-bg-opacity: 1;
   background-color: rgb(255 180 0 / var(--tw-bg-opacity));
@@ -688,16 +702,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-green {
-  --tw-bg-opacity: 1;
-  background-color: rgb(152 190 15 / var(--tw-bg-opacity));
-}
-
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-30 {
@@ -825,27 +829,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.focus\:bg-gray-50:focus {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
-
-.focus\:opacity-70:focus {
-  opacity: 0.7;
-}
-
-.focus\:opacity-100:focus {
-  opacity: 1;
-}
-
-.focus\:opacity-10:focus {
-  opacity: 0.1;
-}
-
-.focus\:opacity-90:focus {
-  opacity: 0.9;
-}
-
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -854,6 +837,10 @@ video {
 @media (min-width: 640px) {
   .sm\:left-20 {
     left: 5rem;
+  }
+
+  .sm\:right-20 {
+    right: 5rem;
   }
 
   .sm\:p-24 {
