@@ -44,7 +44,9 @@ const Cars = () => {
           <li className="cursor-pointer py-4 text-2xl font-semibold pl-8 bg-green text-white">MODELS</li>
           <li className="cursor-pointer py-4 text-2xl font-semibold pl-8">LIFESTYLE</li>
           <li className="cursor-pointer py-4 text-2xl font-semibold pl-8">SHOP</li>
-          <li className="cursor-pointer py-4 text-2xl font-semibold pl-8">TEST DRIVE</li>
+          <Link to="/reserved">
+            <li className="cursor-pointer py-4 text-2xl font-semibold pl-8">RESERVED</li>
+          </Link>
         </ul>
       </div>
       <div className="main-section flex flex-col relative justify-center">

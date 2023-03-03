@@ -48,7 +48,9 @@ const ReservedCars = () => {
           <img className="w-24 mx-auto" src="./logo.svg" alt="logo" />
         </Link>
         <ul className="flex flex-col mt-16 ml-4">
-          <li className="cursor-pointer py-4 text-2xl font-semibold pl-8">MODELS</li>
+          <Link to="/cars">
+            <li className="cursor-pointer py-4 text-2xl font-semibold pl-8">MODELS</li>
+          </Link>
           <li className="cursor-pointer py-4 text-2xl font-semibold pl-8">LIFESTYLE</li>
           <li className="cursor-pointer py-4 text-2xl font-semibold pl-8">SHOP</li>
           <li className="cursor-pointer py-4 text-2xl font-semibold pl-8 bg-green text-white">RESERVED</li>
