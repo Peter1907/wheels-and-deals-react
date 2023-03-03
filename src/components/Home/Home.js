@@ -19,8 +19,12 @@ const Home = () => {
         </div>
       </div>
       <div className="absolute top-0 self-center flex justify-between items-center w-[95%] mt-8 text-sm font-semibold sm:text-xl">
-        <button type="button" className="bg-black bg-opacity-30 text-slate-100 py-2 px-6 rounded-full hover:bg-black hover:text-orange hover:opacity-80">LOGIN</button>
-        <button type="button" className="bg-black bg-opacity-30 text-slate-100 py-2 px-6 rounded-full hover:bg-black hover:text-orange hover:opacity-80">SIGN UP</button>
+        <Link to="/login">
+          <button type="button" className="bg-black bg-opacity-30 text-slate-100 py-2 px-6 rounded-full hover:bg-black hover:text-orange hover:opacity-80">LOGIN</button>
+        </Link>
+        <Link to="/signup">
+          <button type="button" className="bg-black bg-opacity-30 text-slate-100 py-2 px-6 rounded-full hover:bg-black hover:text-orange hover:opacity-80">SIGN UP</button>
+        </Link>
       </div>
     </div>
   );
