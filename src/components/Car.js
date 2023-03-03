@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const Car = ({ data }) => {
@@ -6,10 +7,10 @@ const Car = ({ data }) => {
   const instagram = './icons/instagram.svg';
 
   return (
-    <div id={data.id} className="car flex flex-col gap-4 justify-start items-center text-center bg-orange rounded-xl">
+    <Link to="/details" className="car flex flex-col gap-4 justify-start items-center text-center bg-orange rounded-xl ease-in-out duration-300 hover:scale-[102%] hover:shadow-2xl">
       <div className="car-image w-56 h-56 relative flex flex-col justify-center md:w-64 md:h-64">
-        <img src={data.photo} alt={`${data.name}`} className="z-10" />
-        <div className="absolute inset-8 bg-black bg-opacity-40 rounded-full z-0 bg-blend-multiply md:inset-12" />
+        <img src={data.photo} alt={`${data.name}`} className="z-10 rounded-full" />
+        <div className="absolute inset-10 bg-black bg-opacity-40 rounded-full z-0 bg-blend-multiply md:inset-12" />
       </div>
       <div className="info-container text-gray-700 mx-2 flex flex-col w-72 gap-4 justify-start md:w-80">
         <h1 className="name text-xl font-semibold md:text-2xl md:font-bold">{data.name}</h1>
@@ -30,13 +31,12 @@ const Car = ({ data }) => {
           <img src={instagram} alt="instagram" className="w-4 md:w-6" />
         </a>
       </div>
-    </div>
+    </Link>
   );
 };
 
 Car.propTypes = {
   data: PropTypes.shape({
-    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     photo: PropTypes.string.isRequired,
