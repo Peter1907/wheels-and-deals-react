@@ -2,25 +2,28 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const background = './background.jpg';
+  const logo = './logo.svg';
 
   return (
-    <div className="home">
-      <img src={background} alt="background" className="fixed top-0 left-0" />
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50">
-        <div className="container mx-auto h-full flex flex-col justify-center items-center">
-          <h1 className="text-5xl text-white font-bold">Wheels and Deals</h1>
-          <p className="text-2xl text-white">Explore elite luxury and class</p>
-          <button type="button" className="bg-white text-black font-bold py-2 px-8 rounded-full mt-4">
+    <div className="home flex flex-col">
+      <img src={logo} alt="logo" className="w-16 z-10 self-center mt-4 sm:w-20" />
+      <img src={background} alt="background" className="absolute w-full h-full object-cover" />
+      <div className="overlay absolute top-0 left-0 w-full h-full bg-orange mix-blend-multiply" />
+      <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center">
+        <div className="flex flex-col my-auto justify-center items-center p-4 bg-black bg-opacity-20 rounded-lg">
+          <h1 className="tracking-wider text-3xl text-slate-100 font-bold mb-4 sm:text-5xl sm:tracking-widest">WHEELS AND DEALS</h1>
+          <p className="tracking-wide font-ibm text-md text-slate-300 mb-12 sm:text-2xl">Explore elite luxury and class</p>
+          <Link to="/cars" className="bg-green text-white font-semibold py-2 px-8 rounded-full mt-4 mt-26 sm:text-2xl">
             Explore
-          </button>
+          </Link>
         </div>
       </div>
-      <div className="absolute top-0 right-20 flex gap-4">
+      <div className="absolute top-0 self-center flex justify-between items-center w-[95%] mt-8 text-sm font-semibold sm:text-xl">
         <Link to="/login">
-          <button type="button" className="bg-white text-black font-bold py-2 px-4 rounded-full mt-4">LOGIN</button>
+          <button type="button" className="bg-black bg-opacity-30 text-slate-100 py-2 px-6 rounded-full hover:bg-black hover:text-orange hover:opacity-80">LOGIN</button>
         </Link>
         <Link to="/signup">
-          <button type="button" className="bg-white text-black font-bold py-2 px-4 rounded-full mt-4">SIGN UP</button>
+          <button type="button" className="bg-black bg-opacity-30 text-slate-100 py-2 px-6 rounded-full hover:bg-black hover:text-orange hover:opacity-80">SIGN UP</button>
         </Link>
       </div>
     </div>
