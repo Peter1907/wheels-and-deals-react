@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Home = () => {
   const background = './background.jpg';
 
@@ -14,8 +16,12 @@ const Home = () => {
         </div>
       </div>
       <div className="absolute top-0 right-20 flex gap-4">
-        <button type="button" className="bg-white text-black font-bold py-2 px-4 rounded-full mt-4">LOGIN</button>
-        <button type="button" className="bg-white text-black font-bold py-2 px-4 rounded-full mt-4">SIGN UP</button>
+        <Link to="/login">
+          <button type="button" className="bg-white text-black font-bold py-2 px-4 rounded-full mt-4">LOGIN</button>
+        </Link>
+        <Link to="/signup">
+          <button type="button" className="bg-white text-black font-bold py-2 px-4 rounded-full mt-4">SIGN UP</button>
+        </Link>
       </div>
     </div>
   );

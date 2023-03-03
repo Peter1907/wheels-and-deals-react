@@ -605,36 +605,16 @@ video {
   left: 0px;
 }
 
-.left-3 {
-  left: 0.75rem;
-}
-
-.left-5 {
-  left: 1.25rem;
+.left-20 {
+  left: 5rem;
 }
 
 .right-20 {
   right: 5rem;
 }
 
-.right-5 {
-  right: 1.25rem;
-}
-
 .top-0 {
   top: 0px;
-}
-
-.top-3 {
-  top: 0.75rem;
-}
-
-.m-2 {
-  margin: 0.5rem;
-}
-
-.m-2\.5 {
-  margin: 0.625rem;
 }
 
 .mx-auto {
@@ -650,40 +630,16 @@ video {
   margin-top: 1rem;
 }
 
-.block {
-  display: block;
-}
-
 .flex {
   display: flex;
-}
-
-.h-0 {
-  height: 0px;
-}
-
-.h-0\.5 {
-  height: 0.125rem;
 }
 
 .h-full {
   height: 100%;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
-.w-1\/2 {
-  width: 50%;
-}
-
 .w-full {
   width: 100%;
-}
-
-.w-screen {
-  width: 100vw;
 }
 
 .flex-col {
@@ -696,10 +652,6 @@ video {
 
 .justify-center {
   justify-content: center;
-}
-
-.gap-2 {
-  gap: 0.5rem;
 }
 
 .gap-4 {
@@ -724,63 +676,18 @@ video {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-
-.bg-green {
-  --tw-bg-opacity: 1;
-  background-color: rgb(152 190 15 / var(--tw-bg-opacity));
-}
-
-.bg-orange {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 180 0 / var(--tw-bg-opacity));
-}
-
-.bg-red-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-opacity-30 {
-  --tw-bg-opacity: 0.3;
-}
-
-.bg-\[url\(\'\/src\/assets\/new-car-background\.jpg\'\)\] {
-  background-image: url('/src/assets/new-car-background.jpg');
-}
-
-.bg-home {
-  background-image: url('../public/background.jpg');
-}
-
-.bg-cover {
-  background-size: cover;
-}
-
-.bg-center {
-  background-position: center;
-}
-
-.p-4 {
-  padding: 1rem;
+.p-16 {
+  padding: 4rem;
 }
 
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 
 .px-8 {
@@ -793,18 +700,9 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.font-ubuntu {
-  font-family: Ubuntu, sans-serif;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .text-5xl {
@@ -816,18 +714,9 @@ video {
   font-weight: 700;
 }
 
-.font-semibold {
-  font-weight: 600;
-}
-
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.text-slate-300 {
-  --tw-text-opacity: 1;
-  color: rgb(203 213 225 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -839,28 +728,10 @@ video {
   opacity: 0.5;
 }
 
-.opacity-60 {
-  opacity: 0.6;
-}
-
-.bg-blend-multiply {
-  background-blend-mode: multiply;
-}
-
-.blur-sm {
-  --tw-blur: blur(4px);
+.blur-lg {
+  --tw-blur: blur(16px);
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.hover\:bg-white:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.hover\:text-black:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .focus\:bg-white:focus {
@@ -871,23 +742,4 @@ video {
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-@media (min-width: 640px) {
-  .sm\:left-20 {
-    left: 5rem;
-  }
-
-  .sm\:right-20 {
-    right: 5rem;
-  }
-
-  .sm\:p-24 {
-    padding: 6rem;
-  }
-
-  .sm\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
 }
