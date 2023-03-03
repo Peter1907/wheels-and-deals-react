@@ -1,4 +1,3 @@
-/* stylelint-disable */
 /*
 ! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com
 */
@@ -606,32 +605,20 @@ video {
   left: 0px;
 }
 
+.left-3 {
+  left: 0.75rem;
+}
+
+.right-0 {
+  right: 0px;
+}
+
 .right-20 {
   right: 5rem;
 }
 
 .top-0 {
   top: 0px;
-}
-
-.left-1 {
-  left: 0.25rem;
-}
-
-.top-1 {
-  top: 0.25rem;
-}
-
-.left-2 {
-  left: 0.5rem;
-}
-
-.top-2 {
-  top: 0.5rem;
-}
-
-.left-3 {
-  left: 0.75rem;
 }
 
 .top-3 {
@@ -651,12 +638,12 @@ video {
   margin-right: auto;
 }
 
-.mt-4 {
-  margin-top: 1rem;
-}
-
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .block {
@@ -687,6 +674,10 @@ video {
   width: 50%;
 }
 
+.w-3\/4 {
+  width: 75%;
+}
+
 .w-full {
   width: 100%;
 }
@@ -707,20 +698,37 @@ video {
   justify-content: center;
 }
 
-.gap-4 {
-  gap: 1rem;
-}
-
-.gap-3 {
-  gap: 0.75rem;
-}
-
 .gap-2 {
   gap: 0.5rem;
 }
 
+.gap-4 {
+  gap: 1rem;
+}
+
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-2\.5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.625rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.625rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .rounded-full {
   border-radius: 9999px;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
 .bg-black {
@@ -728,14 +736,9 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-white {
+.bg-gray-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-orange {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 180 0 / var(--tw-bg-opacity));
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
 .bg-green {
@@ -743,13 +746,23 @@ video {
   background-color: rgb(152 190 15 / var(--tw-bg-opacity));
 }
 
-.bg-gray-200 {
+.bg-lime-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  background-color: rgb(132 204 22 / var(--tw-bg-opacity));
 }
 
-.bg-opacity-20 {
-  --tw-bg-opacity: 0.2;
+.bg-orange {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 180 0 / var(--tw-bg-opacity));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[url\(\'\/src\/assets\/form_reservation_bg01\.png\'\)\] {
+  background-image: url('/src/assets/form_reservation_bg01.png');
 }
 
 .bg-\[url\(\'\/src\/assets\/new-car-background\.jpg\'\)\] {
@@ -762,6 +775,14 @@ video {
 
 .bg-center {
   background-position: center;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .px-4 {
@@ -779,9 +800,18 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-4xl {
@@ -794,13 +824,35 @@ video {
   line-height: 1;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .font-bold {
   font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+
+.tracking-wider {
+  letter-spacing: 0.05em;
 }
 
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-lime-500 {
+  --tw-text-opacity: 1;
+  color: rgb(132 204 22 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -814,6 +866,16 @@ video {
 
 .bg-blend-multiply {
   background-blend-mode: multiply;
+}
+
+.placeholder\:text-white::-webkit-input-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.placeholder\:text-white::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .focus\:bg-white:focus {
