@@ -6,6 +6,7 @@ const CitySelect = ({ value, onChange, country }) => {
     'United States': ['New York', 'Detroit', 'Los Angeles', 'Miami'],
     Mexico: ['Mexico City', 'Monterrey', 'Guadalajara'],
     Ecuador: ['Quito', 'Guayaquil', 'Cuenca'],
+    Egypt: ['Cairo', 'Alexandria', 'Giza'],
   };
 
   const countryCities = cities[country] || [];

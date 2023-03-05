@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CountrySelect = ({ value, onChange }) => {
-  const countries = ['United States', 'Mexico', 'Ecuador'];
+  const countries = ['United States', 'Mexico', 'Ecuador', 'Egypt'];
 
   return (
     <select
