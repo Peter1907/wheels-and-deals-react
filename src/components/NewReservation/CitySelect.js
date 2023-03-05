@@ -13,6 +13,7 @@ const CitySelect = ({ value, onChange, country }) => {
 
   return (
     <select
+      required
       className="border-white border-2 bg-lime-500 rounded-full px-4 py-2 mt-2 w-48"
       value={value}
       onChange={(e) => onChange(e.target.value)}

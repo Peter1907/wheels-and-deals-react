@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CountrySelect = ({ value, onChange }) => {
-  const countries = ['United States', 'Mexico', 'Ecuador', 'Egypt'];
+const ModelSelect = ({ value, onChange }) => {
+  const models = ['BMW', 'Mercedes', 'Bugatti', 'Lamborghini'];
 
   return (
     <select
@@ -11,19 +11,19 @@ const CountrySelect = ({ value, onChange }) => {
       value={value}
       onChange={(e) => onChange(e.target.value)}
     >
-      <option value="">COUNTRY</option>
-      {countries.map((country) => (
-        <option key={country} value={country}>
-          {country}
+      <option value="">MODEL</option>
+      {models.map((model) => (
+        <option key={model} value={model}>
+          {model}
         </option>
       ))}
     </select>
   );
 };
 
-CountrySelect.propTypes = {
+ModelSelect.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 
-export default CountrySelect;
+export default ModelSelect;

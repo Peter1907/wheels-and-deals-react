@@ -3,8 +3,9 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import CitySelect from './CitySelect';
 import CountrySelect from './CountrySelect';
+import ModelSelect from './ModelSelect';
 
-const ReservationForm = (onSubmit) => {
+const ReservationForm = () => {
   const [model, setModel] = useState('');
   const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
@@ -18,19 +19,11 @@ const ReservationForm = (onSubmit) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input
-          className="placeholder:text-white border-white border-2 bg-lime-500 rounded-full px-4 py-2 mt-2"
-          type="text"
-          value={model}
-          placeholder="MODEL"
-          onChange={(e) => setModel(e.target.value)}
-        />
-
+        <ModelSelect value={model} onChange={setModel} />
         <CountrySelect value={country} onChange={setCountry} />
         <CitySelect value={city} onChange={setCity} country={country} />
         <DatePicker
           className="placeholder:text-white border-white border-2 bg-lime-500 rounded-full px-4 py-2 mt-2 w-48"
-          showIcon
           selected={reservDate}
           onChange={(date) => setReservDate(date)}
           minDate={new Date()}
