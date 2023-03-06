@@ -1,7 +1,11 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Navigation from '../Navigation';
 import Car from './Car';
 
-const ReservedCars = () => {
+const ReservedCars = () => {  
+  const hamburguerIcon = <FontAwesomeIcon icon={faBars} />
+
   const data = [
     {
       id: 1,
@@ -45,6 +49,9 @@ const ReservedCars = () => {
     <div className="reserved-cars">
       <Navigation />
       <div className="lg:ml-[250px] main-section flex flex-col relative justify-center">
+        <div id="mobile-menu" className="lg:hidden">
+          {hamburguerIcon}
+        </div>
         <h1 className="text-3xl text-gray-800 tracking-wider font-bold text-center mt-6 md:text-5xl md:tracking-widest md:mt-12">RESERVED MODELS</h1>
         <h4 className="text-sm text-gray-700 font-ibm font-light text-center mt-2 md:text-xl md:tracking-widest md:mt-4">Here are the models you have reserved</h4>
         <hr className="w-24 self-center m-4 border-t-black md:w-52 md:m-8" />
