@@ -16,12 +16,12 @@ const ReservationForm = () => {
   };
 
   return (
-    <div className='mt-8'>
+    <div className="mt-8">
       <form className="flex flex-wrap justify-center content-center" onSubmit={handleSubmit}>
         <ModelSelect value={model} onChange={setModel} />
         <CountrySelect value={country} onChange={setCountry} />
         <CitySelect value={city} onChange={setCity} country={country} />
-        <div className='mt-2 w-full max-w-xs min-w-64 lg:m-6'>
+        <div className="mt-2 w-full max-w-xs min-w-64 lg:m-6">
           <DatePicker
             className="placeholder:text-white border-white border-2 bg-lime-500 rounded-full px-4 py-2 w-full"
             selected={reservDate}
@@ -30,7 +30,7 @@ const ReservationForm = () => {
             placeholderText="DATE"
           />
         </div>
-        
+
         <button className="text-lime-500 font-bold border-white border-2 bg-white rounded-full px-4 py-2 mt-2 w-full max-w-xs min-w-64 lg:m-6 hover:ring-neutral-600 focus:ring-2" type="submit">
           BOOK NOW
         </button>
