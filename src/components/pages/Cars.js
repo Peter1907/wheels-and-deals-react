@@ -1,4 +1,5 @@
 import Car from '../Car';
+import MobileNavigation from '../MobileNavigation';
 import Navigation from '../Navigation';
 
 const Cars = () => {
@@ -35,7 +36,8 @@ const Cars = () => {
 
   const width = window.innerWidth;
   return (
-    <div className="cars-page">
+    <div className="cars-page pt-8">
+      <MobileNavigation />
       <Navigation />
       <div className="lg:ml-[250px] main-section flex flex-col relative justify-center">
         <h1 className="text-3xl text-gray-800 tracking-wider font-bold text-center mt-6 md:text-5xl md:tracking-widest md:mt-12">LATEST MODELS</h1>
