@@ -862,6 +862,10 @@ video {
   align-self: center;
 }
 
+.justify-self-start {
+  justify-self: start;
+}
+
 .overflow-scroll {
   overflow: scroll;
 }
@@ -1147,6 +1151,12 @@ video {
   mix-blend-mode: multiply;
 }
 
+.ring-2 {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
 .blur-sm {
   --tw-blur: blur(4px);
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1233,6 +1243,10 @@ a.active {
 
   .sm\:w-20 {
     width: 5rem;
+  }
+
+  .sm\:object-cover {
+    object-fit: cover;
   }
 
   .sm\:p-24 {
@@ -1372,6 +1386,10 @@ a.active {
 
   .lg\:block {
     display: block;
+  }
+
+  .lg\:hidden {
+    display: none;
   }
 
   .lg\:h-full {
