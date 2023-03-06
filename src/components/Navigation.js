@@ -9,8 +9,12 @@ const Navigation = () => (
       <NavLink to="/cars">
         <li className="cursor-pointer py-4 text-xl font-semibold pl-8">CARS</li>
       </NavLink>
-      <li className="cursor-pointer py-4 text-xl font-semibold pl-8">RESERVE</li>
-      <li className="cursor-pointer py-4 text-xl font-semibold pl-8">MY RESERVATIONS</li>
+      <NavLink to="/new-reservation">
+        <li className="cursor-pointer py-4 text-xl font-semibold pl-8">NEW RESERVATION</li>
+      </NavLink>
+      <NavLink to="/reserved">
+        <li className="cursor-pointer py-4 text-xl font-semibold pl-8">MY RESERVATIONS</li>
+      </NavLink>      
       <NavLink to="/new-car">
         <li className="cursor-pointer py-4 text-xl font-semibold pl-8">ADD CAR</li>
       </NavLink>
