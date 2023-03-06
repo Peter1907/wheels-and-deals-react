@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
 import Car from '../Car';
+import MobileNavigation from '../MobileNavigation';
+import Navigation from '../Navigation';
 
 const Cars = () => {
   const data = [
@@ -35,21 +36,10 @@ const Cars = () => {
 
   const width = window.innerWidth;
   return (
-    <div className="cars-page">
-      <div className="navigation hidden border-r border-gray-300 float-left py-8 w-[250px] bg-slate-100 h-screen lg:block">
-        <Link to="/">
-          <img className="w-24 mx-auto" src="./logo.svg" alt="logo" />
-        </Link>
-        <ul className="flex flex-col mt-16 ml-4">
-          <li className="cursor-pointer py-4 text-2xl font-semibold pl-8 bg-green text-white">MODELS</li>
-          <li className="cursor-pointer py-4 text-2xl font-semibold pl-8">LIFESTYLE</li>
-          <li className="cursor-pointer py-4 text-2xl font-semibold pl-8">SHOP</li>
-          <Link to="/reserved">
-            <li className="cursor-pointer py-4 text-2xl font-semibold pl-8">RESERVED</li>
-          </Link>
-        </ul>
-      </div>
-      <div className="main-section flex flex-col relative justify-center">
+    <div className="cars-page pt-8">
+      <MobileNavigation />
+      <Navigation />
+      <div className="lg:ml-[250px] main-section flex flex-col relative justify-center">
         <h1 className="text-3xl text-gray-800 tracking-wider font-bold text-center mt-6 md:text-5xl md:tracking-widest md:mt-12">LATEST MODELS</h1>
         <h4 className="text-sm text-gray-700 font-ibm font-light text-center mt-2 md:text-xl md:tracking-widest md:mt-4">We have the best cars in the world</h4>
         <hr className="w-24 self-center m-4 border-t-black md:w-52 md:m-8" />

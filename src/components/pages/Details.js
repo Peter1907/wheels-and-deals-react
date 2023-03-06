@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Navigation from '../Navigation';
 
 const Details = () => {
   const car = {
@@ -19,18 +20,8 @@ const Details = () => {
 
   return (
     <div className="details-page text-center h-screen lg:overflow-hidden">
-      <div className="navigation hidden border-r border-gray-300 float-left inset-0 py-8 min-h-screen w-[250px] bg-slate-100 lg:block">
-        <Link to="/">
-          <img className="w-24 mx-auto" src="./logo.svg" alt="logo" />
-        </Link>
-        <ul className="flex flex-col mt-16 ml-4 text-left">
-          <li className="cursor-pointer py-4 text-2xl font-semibold pl-8 bg-green text-white">MODELS</li>
-          <li className="cursor-pointer py-4 text-2xl font-semibold pl-8">LIFESTYLE</li>
-          <li className="cursor-pointer py-4 text-2xl font-semibold pl-8">SHOP</li>
-          <li className="cursor-pointer py-4 text-2xl font-semibold pl-8">TEST DRIVE</li>
-        </ul>
-      </div>
-      <div className="details-container flex flex-col items-center justify-center min-h-screen md:flex-row">
+      <Navigation />
+      <div className="lg:ml-[250px] details-container flex flex-col items-center justify-center min-h-screen md:flex-row">
         <div className="car-image mx-auto flex-nowrap w-80 h-80 self-end relative flex flex-col justify-center md:w-[750px] md:h-[750px]">
           <img src={photo} alt={`${name}`} className="z-10 rounded-full" />
           <div className="hidden absolute inset-32 bg-black bg-opacity-30 rounded-full z-0 xl:block" />
