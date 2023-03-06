@@ -6,7 +6,7 @@ const Navigation = () => (
       <img className="w-24 mx-auto" src="./logo.svg" alt="logo" />
     </NavLink>
     <ul className="flex flex-col mt-16 ml-4">
-      <NavLink to="/cars" activeClassName="bg-green">
+      <NavLink to="/cars">
         <li className="cursor-pointer py-4 text-xl font-semibold pl-8">CARS</li>
       </NavLink>
       <li className="cursor-pointer py-4 text-xl font-semibold pl-8">RESERVE</li>

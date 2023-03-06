@@ -1,4 +1,3 @@
-/* stylelint-disable */
 /*
 ! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com
 */
@@ -978,8 +977,8 @@ video {
   --tw-bg-opacity: 0.5;
 }
 
-.bg-opacity-60 {
-  --tw-bg-opacity: 0.6;
+.bg-\[url\(\'\/src\/assets\/form_reservation_bg01\.png\'\)\] {
+  background-image: url('/src/assets/form_reservation_bg01.png');
 }
 
 .bg-\[url\(\'\/src\/assets\/new-car-background\.jpg\'\)\] {
@@ -1063,6 +1062,11 @@ video {
 
 .font-ubuntu {
   font-family: Ubuntu, sans-serif;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-3xl {
@@ -1162,6 +1166,13 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+a.active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(152 190 15 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .placeholder\:text-white::-webkit-input-placeholder {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1214,15 +1225,13 @@ video {
   outline-offset: 2px;
 }
 
+.focus\:ring-2:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
 @media (min-width: 640px) {
-  .sm\:left-20 {
-    left: 5rem;
-  }
-
-  .sm\:right-20 {
-    right: 5rem;
-  }
-
   .sm\:w-20 {
     width: 5rem;
   }
@@ -1354,6 +1363,14 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:m-6 {
+    margin: 1.5rem;
+  }
+
+  .lg\:ml-\[250px\] {
+    margin-left: 250px;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -1365,10 +1382,6 @@ video {
   .lg\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
-  }
-
-  .lg\:tracking-wide {
-    letter-spacing: 0.025em;
   }
 
   .lg\:tracking-wider {
