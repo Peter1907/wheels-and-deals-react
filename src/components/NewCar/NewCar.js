@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addCar } from '../../redux/reducers/addCar';
 
 const logo = './logo.svg';
 
-function NewCar(onSubmit) {
+function NewCar() {
+  const dispatch = useDispatch();
+
   const [carData, setCarData] = useState({
     name: '',
     description: '',
@@ -13,7 +17,7 @@ function NewCar(onSubmit) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onSubmit(carData);
+    dispatch(addCar(carData));
   };
 
   const handleInputChange = (event) => {
