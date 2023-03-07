@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addCar } from '../../redux/reducers/addCar';
+import { addCar } from '../../redux/reducers/cars';
 
 const logo = './logo.svg';
 

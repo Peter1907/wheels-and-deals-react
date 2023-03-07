@@ -1,12 +1,29 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons';
+import { allowDelete } from '../redux/reducers/cars';
+import logo from '../assets/logo.png';
 
 const MobileNavigation = () => {
   const crossIcon = <FontAwesomeIcon icon={faXmark} />;
   const hamburguerIcon = <FontAwesomeIcon icon={faBars} />;
   const [showMenu, setShowMenu] = useState(false);
+  const dispatch = useDispatch();
+
+  const displayMessage = () => {
+    const messageContainer = document.querySelector('.message-container');
+    messageContainer.classList.remove('hidden');
+    setTimeout(() => {
+      messageContainer.classList.add('hidden');
+    }, 4000);
+  };
+
+  const activateDelete = () => {
+    dispatch(allowDelete());
+    displayMessage();
+  };
 
   return (
     <div className="mobile-menu lg:hidden">
@@ -27,7 +44,7 @@ const MobileNavigation = () => {
             {crossIcon}
           </button>
           <NavLink to="/">
-            <img className="w-24 mx-auto" src="./logo.svg" alt="logo" />
+            <img className="w-24 mx-auto" src={logo} alt="logo" />
           </NavLink>
           <ul className="flex items-stretch text-center flex-col mt-16 px-4">
             <NavLink to="/cars">
@@ -42,7 +59,17 @@ const MobileNavigation = () => {
             <NavLink to="/new-car">
               <li className="cursor-pointer py-4 text-xl font-semibold">ADD CAR</li>
             </NavLink>
-            <li className="cursor-pointer py-4 text-xl font-semibold">DELETE CAR</li>
+            <li className="cursor-pointer py-4 text-xl font-semibold">
+              <button
+                type="button"
+                onClick={() => {
+                  setShowMenu(false);
+                  activateDelete();
+                }}
+              >
+                DELETE CAR
+              </button>
+            </li>
           </ul>
         </div>
       )}
