@@ -32,9 +32,18 @@ const reservationReducer = (state = initailState, action) => {
 };
 
 export const deleteReservation = createAsyncThunk(DELETE_RESERVATION, async (id) => {
-  await fetch(`${API_URL}/${id}`, {
+  const response = await fetch(`${API_URL}/${id}`, {
     method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+    },
   });
+
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.message || 'Unable to delete item');
+  }
   return id;
 });
 
