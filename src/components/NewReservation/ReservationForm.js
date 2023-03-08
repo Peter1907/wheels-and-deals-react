@@ -1,6 +1,7 @@
 import { useEffect, React, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCars } from '../../redux/reducers/cars';
+import { addReservation } from '../../redux/reducers/reservation';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import CitySelect from './CitySelect';
@@ -15,12 +16,21 @@ const ReservationForm = () => {
   const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
   const [reservDate, setReservDate] = useState(new Date());
+
   useEffect(() => {
     dispatch(getCars());
   }, [dispatch]);
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    const reservationData = {
+      date: reservDate,
+      city: city,
+      country: country,
+      car_id: model
+    }
+    dispatch(addReservation(reservationData));
+    console.log(reservationData)
   };
 
   return (

@@ -24,7 +24,7 @@ const ModelSelect = ({ value, onChange, models }) => {
 ModelSelect.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  models: PropTypes.object.isRequired
+  models: PropTypes.array.isRequired
 };
 
 export default ModelSelect;
