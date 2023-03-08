@@ -1,4 +1,6 @@
-import { React, useState } from 'react';
+import { useEffect, React, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCars } from '../../redux/reducers/cars';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import CitySelect from './CitySelect';
@@ -6,19 +8,25 @@ import CountrySelect from './CountrySelect';
 import ModelSelect from './ModelSelect';
 
 const ReservationForm = () => {
+  const models = useSelector((store) => store.cars.items);
+  const dispatch = useDispatch();
+
   const [model, setModel] = useState('');
   const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
   const [reservDate, setReservDate] = useState(new Date());
+  useEffect(() => {
+    dispatch(getCars());
+  }, [dispatch]);
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
   };
 
   return (
     <div className="mt-8">
       <form className="flex flex-wrap justify-center content-center" onSubmit={handleSubmit}>
-        <ModelSelect value={model} onChange={setModel} />
+        <ModelSelect value={model} onChange={setModel} models={models}/>
         <CountrySelect value={country} onChange={setCountry} />
         <CitySelect value={city} onChange={setCity} country={country} />
         <div className="mt-2 w-full max-w-xs min-w-64 lg:m-6">

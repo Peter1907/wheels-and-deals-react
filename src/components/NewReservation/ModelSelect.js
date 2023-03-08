@@ -1,8 +1,8 @@
-import React from 'react';
+import { React } from 'react';
 import PropTypes from 'prop-types';
 
-const ModelSelect = ({ value, onChange }) => {
-  const models = ['BMW', 'Mercedes', 'Bugatti', 'Lamborghini'];
+const ModelSelect = ({ value, onChange, models }) => {
+  
 
   return (
     <select
@@ -13,8 +13,8 @@ const ModelSelect = ({ value, onChange }) => {
     >
       <option value="">MODEL</option>
       {models.map((model) => (
-        <option key={model} value={model}>
-          {model}
+        <option key={model.name} value={model.id}>
+          {model.name}
         </option>
       ))}
     </select>
@@ -24,6 +24,7 @@ const ModelSelect = ({ value, onChange }) => {
 ModelSelect.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  models: PropTypes.object.isRequired
 };
 
 export default ModelSelect;
