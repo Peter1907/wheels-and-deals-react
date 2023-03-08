@@ -11,8 +11,13 @@ import ModelSelect from './ModelSelect';
 const ReservationForm = () => {
   const models = useSelector((store) => store.cars.items);
   const dispatch = useDispatch();
+  let selectedModel = '';
 
-  const [model, setModel] = useState('');
+  if (sessionStorage.getItem('id')) {
+    selectedModel = sessionStorage.getItem('id');
+  }
+
+  const [model, setModel] = useState(selectedModel);
   const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
   const [reservDate, setReservDate] = useState(new Date());
@@ -30,7 +35,6 @@ const ReservationForm = () => {
       car_id: model,
     };
     dispatch(addReservation(reservationData));
-    console.log(reservationData);
   };
 
   return (

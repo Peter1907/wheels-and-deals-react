@@ -44,7 +44,7 @@ export const postLogin = createAsyncThunk(POST_LOGIN, async (user) => {
     throw new Error(error.message || 'Unable to create user');
   }
   const data = await response.json();
-  sessionStorage.setItem('userName', data.user_name)
+  sessionStorage.setItem('userName', data.user_name);
   return data;
 });
 

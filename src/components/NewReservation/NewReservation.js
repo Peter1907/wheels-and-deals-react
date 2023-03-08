@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 import ReservationForm from './ReservationForm';
 
 const NewReservation = () => {
-  const currentUser = sessionStorage.getItem('userName')
- 
+  const currentUser = sessionStorage.getItem('userName');
+
   return (
     <div className="mb-2 text-white flex flex-col items-center justify-center absolute w-full bg-cover bg-center bg-[url('/src/assets/form_reservation_bg01.png')] object-cover h-full">
       <div id="heading" className="fixed p-4 font-bold text-base w-full flex items-center justify-between top-0 left-0 right-0">
@@ -13,7 +13,7 @@ const NewReservation = () => {
       </div>
       <div className="w-full block flex justify-center">
         <NavLink to="/" className="items-center self-center ">
-          <img className="w-16 mt-4 sm:w-20" src="./logo_green.svg" alt="logo" />
+          <img className="w-16 mt-4 rounded-full ring-2 ring-emerald-500 focus:ring-2 sm:w-20" src="./logo_green.svg" alt="logo" />
         </NavLink>
       </div>
 
