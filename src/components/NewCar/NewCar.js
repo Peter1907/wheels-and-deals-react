@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
@@ -13,11 +13,26 @@ const logo = './logo.svg';
 function NewCar() {
   const dispatch = useDispatch();
   const [carData, setCarData] = useState({
-    name: null,
-    description: null,
-    photo: null,
-    price: null,
+    name: '',
+    description: '',
+    photo: '',
+    price: '',
   });
+  const currentUser = sessionStorage.getItem('userName');
+
+  useEffect(() => {
+    if (!currentUser) {
+      // eslint-disable-next-line no-alert
+      alert('You need to be logged in to access this page');
+      window.location.href = '/login';
+    }
+  }, [currentUser]);
+
+  const handleLogout = () => {
+    sessionStorage.removeItem('userName');
+    sessionStorage.removeItem('token');
+    window.location.href = '/';
+  };
 
   const [Message, setMessage] = useState('');
   const displayMessage = () => {
@@ -30,7 +45,7 @@ function NewCar() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!carData.name || !carData.description || !carData.price) {
+    if (carData.name === '' || carData.description === '' || carData.price === '') {
       setMessage('Please fill all the fields');
       displayMessage();
       return;
@@ -85,7 +100,18 @@ function NewCar() {
       <Link to="/cars" className="w-16 z-10 self-center mt-4 sm:w-20 absolute top-1">
         <img src={logo} alt="logo" />
       </Link>
-      <div className="bg-gray-200 rounded-full px-4 py-2 mt-2 focus:outline-none focus:bg-white fixed top-3 left-3">User Diego</div>
+      <div id="heading" className="fixed p-4 font-bold text-base w-full flex items-center justify-between top-0 left-0 right-0">
+        <div className="bg-black bg-opacity-80 text-slate-100 py-2 px-6 rounded-full">
+          {currentUser}
+        </div>
+        <button
+          className="bg-black bg-opacity-30 text-slate-100 py-2 px-6 rounded-full hover:bg-black hover:text-orange hover:opacity-80"
+          type="button"
+          onClick={handleLogout}
+        >
+          LOG OUT
+        </button>
+      </div>
       <h1 className="text-4xl font-bold text-white">ADD A NEW CAR</h1>
       <span className="block h-0.5 w-1/2 bg-white m-2.5" />
       <form onSubmit={handleSubmit} className="relative flex flex-col gap-2 px-4 py-12 bg-black bg-opacity-50 rounded-lg">

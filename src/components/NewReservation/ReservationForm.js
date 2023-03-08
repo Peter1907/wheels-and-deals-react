@@ -38,7 +38,7 @@ const ReservationForm = () => {
   };
 
   return (
-    <div className="mt-8">
+    <div className="mt-2 lg:mt-8">
       <form className="flex flex-wrap justify-center content-center" onSubmit={handleSubmit}>
         <ModelSelect value={model} onChange={setModel} models={models} />
         <CountrySelect value={country} onChange={setCountry} />

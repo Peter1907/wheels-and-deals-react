@@ -51,7 +51,7 @@ const Car = ({ data }) => {
           </p>
         </div>
       </Link>
-      <div className="social mt-8 mb-4 flex gap-4 rounded-full bg-white bg-opacity-50 py-2 px-6">
+      <div className="social mt-auto justify-self-end mb-4 flex gap-4 rounded-full bg-white bg-opacity-50 py-2 px-6">
         <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
           <img src={facebook} alt="facebook" className="w-4 md:w-6" />
         </a>
