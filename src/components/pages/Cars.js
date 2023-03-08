@@ -27,8 +27,8 @@ const Cars = () => {
     <div className="cars-page pt-8">
       <MobileNavigation />
       <Navigation />
-      <div className="lg:ml-[250px] main-section flex flex-col justify-center">
-        <div className="message-container hidden bg-green text-white text-center py-2 px-4 rounded-md absolute top-2 right-2">
+      <div className="lg:ml-[250px] main-section relative flex flex-col justify-center">
+        <div className="message-container hidden bg-green text-white text-center py-2 px-4 rounded-md absolute -top-6 right-2">
           <span className="message font-semibold text-sm lg:text-base">{message}</span>
           <button
             type="button"

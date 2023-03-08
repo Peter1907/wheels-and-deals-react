@@ -17,7 +17,7 @@ const NewReservation = () => {
   // }
   const currentUser = {
     id: 1,
-    name: 'Cindy Dorantes'
+    name: 'Cindy Dorantes',
   };
 
   return (
@@ -31,7 +31,7 @@ const NewReservation = () => {
           <img className="w-16 mt-4 sm:w-20" src="./logo_green.svg" alt="logo" />
         </NavLink>
       </div>
-      
+
       <section className="w-3/4 mt-8">
         <h1 className="text-3xl font-bold text-center lg:tracking-wider">BOOK A WHEELS&DEALS TEST-RIDE</h1>
         <span className="block h-0.5 w-full bg-white m-2.5" />
