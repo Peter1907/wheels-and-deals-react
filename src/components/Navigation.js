@@ -28,7 +28,10 @@ const Navigation = () => {
         <NavLink to="/cars">
           <li className="cursor-pointer py-4 text-xl font-semibold pl-8">CARS</li>
         </NavLink>
-        <NavLink to="/new-reservation">
+        <NavLink
+          to="/new-reservation"
+          onClick={() => sessionStorage.removeItem('id')}
+        >
           <li className="cursor-pointer py-4 text-xl font-semibold pl-8">NEW RESERVATION</li>
         </NavLink>
         <NavLink to="/reserved">

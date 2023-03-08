@@ -14,6 +14,10 @@ const Details = () => {
     dispatch(getCarInfo(id));
   }, [dispatch, id]);
 
+  const handleReserve = () => {
+    sessionStorage.setItem('id', id);
+  };
+
   const {
     name,
     description,
@@ -56,7 +60,14 @@ const Details = () => {
             {description}
           </p>
           <Link to="/cars" className="text-sm mt-4 self-end">BROWSE MORE MODELS &#10148;</Link>
-          <button type="button" className="bg-green self-center text-white py-2 px-8 rounded-full mt-4 mt-26 md:text-2xl">Reserve</button>
+          <Link
+            to="/new-reservation"
+            type="button"
+            className="bg-green self-center text-white py-2 px-8 rounded-full mt-4 mt-26 md:text-2xl"
+            onClick={handleReserve}
+          >
+            Reserve
+          </Link>
         </div>
       </div>
     </div>

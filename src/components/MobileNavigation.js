@@ -50,7 +50,10 @@ const MobileNavigation = () => {
             <NavLink to="/cars">
               <li className="cursor-pointer py-4 text-xl font-semibold">CARS</li>
             </NavLink>
-            <NavLink to="/new-reservation">
+            <NavLink
+              to="/new-reservation"
+              onClick={() => sessionStorage.removeItem('id')}
+            >
               <li className="cursor-pointer py-4 text-xl font-semibold">NEW RESERVATION</li>
             </NavLink>
             <NavLink to="/reserved">
