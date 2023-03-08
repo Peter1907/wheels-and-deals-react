@@ -1,29 +1,14 @@
 import React from 'react';
-// import { useEffect } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import ReservationForm from './ReservationForm';
 
 const NewReservation = () => {
-  // const states = useSelector((state) => state);
-  // const data = states.reservations;
-  // const dispatch = useDispatch();
-
-  // if (states.loginUsers.signed) {
-  //   const currentUser = {
-  //     id: user_id,
-  //     name: user_name
-  //   }
-  // }
-  const currentUser = {
-    id: 1,
-    name: 'Cindy Dorantes',
-  };
-
+  const currentUser = sessionStorage.getItem('userName')
+ 
   return (
     <div className="mb-2 text-white flex flex-col items-center justify-center absolute w-full bg-cover bg-center bg-[url('/src/assets/form_reservation_bg01.png')] object-cover h-full">
       <div id="heading" className="fixed p-4 font-bold text-base w-full flex items-center justify-between top-0 left-0 right-0">
-        <div className="border-white border-2 bg-lime-500 rounded-full px-4 py-2 mt-2 text-center">{currentUser.name}</div>
+        <div className="border-white border-2 bg-lime-500 rounded-full px-4 py-2 mt-2 text-center">{currentUser}</div>
         <div className="border-white border-2 bg-lime-500 rounded-full px-4 py-2 mt-2 text-center">LOG OUT</div>
       </div>
       <div className="w-full block flex justify-center">

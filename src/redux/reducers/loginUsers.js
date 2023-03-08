@@ -43,8 +43,9 @@ export const postLogin = createAsyncThunk(POST_LOGIN, async (user) => {
     const error = await response.json();
     throw new Error(error.message || 'Unable to create user');
   }
-
-  return response.json();
+  const data = await response.json();
+  sessionStorage.setItem('userName', data.user_name)
+  return data;
 });
 
 export default loginReducer;
