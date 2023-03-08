@@ -12,7 +12,7 @@ const Details = () => {
 
   useEffect(() => {
     dispatch(getCarInfo(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   const {
     name,
