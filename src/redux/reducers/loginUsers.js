@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const API_URL = 'http://localhost:3000/api/login';
 const POST_LOGIN = 'wheels_and_deals/login/POST_LOGIN';
+const LOGIN_MESSAGE = 'wheels_and_deals/login/LOGIN_MESSAGE';
 
 const initailState = {
   token: null,
@@ -26,12 +27,18 @@ const loginReducer = (state = initailState, action) => {
         signed: false,
         message: 'Login Failed',
       };
+    case LOGIN_MESSAGE:
+      return {
+        ...state,
+        signed: false,
+        message: 'You have to login first',
+      };
     default:
       return state;
   }
 };
 
-export const postLogin = createAsyncThunk(POST_LOGIN, async (user) => {
+const postLogin = createAsyncThunk(POST_LOGIN, async (user) => {
   const response = await fetch(API_URL, {
     method: 'POST',
     headers: {
@@ -48,4 +55,9 @@ export const postLogin = createAsyncThunk(POST_LOGIN, async (user) => {
   return data;
 });
 
+const setLoginMessage = () => ({
+  type: LOGIN_MESSAGE,
+});
+
+export { postLogin, setLoginMessage };
 export default loginReducer;

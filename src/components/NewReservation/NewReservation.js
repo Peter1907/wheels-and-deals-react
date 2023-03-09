@@ -1,17 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import ReservationForm from './ReservationForm';
 
 const NewReservation = () => {
   const currentUser = sessionStorage.getItem('userName');
-
-  useEffect(() => {
-    if (!currentUser) {
-      // eslint-disable-next-line no-alert
-      alert('You need to be logged in to access this page');
-      window.location.href = '/login';
-    }
-  }, [currentUser]);
 
   const handleLogout = () => {
     sessionStorage.removeItem('userName');

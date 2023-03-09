@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
@@ -19,14 +19,6 @@ function NewCar() {
     price: '',
   });
   const currentUser = sessionStorage.getItem('userName');
-
-  useEffect(() => {
-    if (!currentUser) {
-      // eslint-disable-next-line no-alert
-      alert('You need to be logged in to access this page');
-      window.location.href = '/login';
-    }
-  }, [currentUser]);
 
   const handleLogout = () => {
     sessionStorage.removeItem('userName');

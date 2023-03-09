@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { NavLink, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { allowDelete } from '../redux/reducers/cars';
+import { setLoginMessage } from '../redux/reducers/loginUsers';
 
 const Navigation = () => {
   const dispatch = useDispatch();
@@ -31,6 +32,10 @@ const Navigation = () => {
     }
   };
 
+  const setMessage = () => {
+    dispatch(setLoginMessage());
+  };
+
   return (
     <div className="fixed top-0 bottom-0 text-left navigation hidden border-r border-gray-300 float-left py-8 w-[250px] bg-slate-100 h-screen lg:block">
       <NavLink to="/">
@@ -47,10 +52,32 @@ const Navigation = () => {
           to="/new-reservation"
           onClick={() => sessionStorage.removeItem('id')}
         >
-          <li className="cursor-pointer py-4 text-xl font-semibold pl-4">NEW RESERVATION</li>
+          <li className="cursor-pointer py-4 text-xl font-semibold pl-4">
+            <button
+              type="button"
+              onClick={() => {
+                if (currentUser === 'Guest') {
+                  setMessage();
+                }
+              }}
+            >
+              NEW RESERVATION
+            </button>
+          </li>
         </NavLink>
         <NavLink to="/new-car">
-          <li className="cursor-pointer py-4 text-xl font-semibold pl-4">ADD CAR</li>
+          <li className="cursor-pointer py-4 text-xl font-semibold pl-4">
+            <button
+              type="button"
+              onClick={() => {
+                if (currentUser === 'Guest') {
+                  setMessage();
+                }
+              }}
+            >
+              ADD CAR
+            </button>
+          </li>
         </NavLink>
         {location.pathname.match('/cars') && (
           <li className="cursor-pointer py-4 text-xl font-semibold pl-4">
@@ -63,7 +90,7 @@ const Navigation = () => {
           </li>
         )}
         <li className="mt-auto">
-          <div className="flex gap-2 items-baseline justify-center">
+          <div className="flex gap-2 items-baseline justify-center flex-wrap">
             <div className="tracking-wide text-xl mt-2 w-max text-gray-800">
               {currentUser}
             </div>
