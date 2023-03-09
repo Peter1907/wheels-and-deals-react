@@ -1,8 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
+import { postUser } from '../../redux/reducers/createUsers';
 
 const SignUp = () => {
-  const logo = './logo.svg';
+  const dispatch = useDispatch();
+  const userLogin = useSelector((state) => state.loginUsers);
+  const userStatus = useSelector((state) => state.usersCreate);
 
   const [userData, setUserData] = useState({
     name: '',
@@ -28,12 +32,15 @@ const SignUp = () => {
       setUserData({
         ...userData, name: '', email: '', password: '', confirmPassword: '',
       });
+      dispatch(postUser(userData));
     }
   };
 
+  if (userLogin.signed) {
+    return <Navigate to="/" replace />;
+  }
   return (
-    <section className="signup flex flex-col">
-      <img src={logo} alt="logo" className="w-16 z-10 self-center mt-4 sm:w-20" />
+    <section className="signup">
       <div className="absolute bg-center bg-cover bg-home h-full w-full bg-orange bg-blend-multiply blur-sm" />
       <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
         <form className="p-4 sm:p-24 bg-black flex flex-col justify-center items-center gap-4 bg-opacity-50 rounded-lg" onSubmit={handleSubmit}>
@@ -43,14 +50,18 @@ const SignUp = () => {
           <input className="bg-gray-100 rounded-full px-4 py-2 mt-2 focus:outline-none focus:bg-white" name="password" type="password" id="password" placeholder="Password" onChange={handleChange} value={userData.password} />
           <input className="bg-gray-100 rounded-full px-4 py-2 mt-2 focus:outline-none focus:bg-white" name="confirmPassword" type="password" id="confirmPassword" placeholder="Confirm Password" onChange={handleChange} value={userData.confirmPassword} />
           <button type="submit" className="bg-green text-white font-semibold py-2 px-8 rounded-full mt-4 mt-26 sm:text-2xl" id="signupButton">SIGN UP</button>
+          {userStatus.created && <h2 className="w-full h-full flex justify-center items-center bg-white rounded-full">{userStatus.message}</h2>}
           {error && <h2 className="w-full h-full flex justify-center items-center bg-red-400 rounded-full">{error}</h2>}
+          {!userStatus.created && <h2 className="w-full h-full flex justify-center items-center bg-red-400 rounded-full">{userStatus.message}</h2>}
         </form>
-        <div className="absolute top-0 self-center flex justify-between items-center w-[95%] mt-8 text-sm font-semibold sm:text-xl">
+        <div className="absolute top-0 left-5 sm:left-20 flex gap-4">
           <Link to="/">
-            <button type="button" className="bg-black bg-opacity-30 text-slate-100 py-2 px-6 rounded-full hover:bg-black hover:text-orange hover:opacity-80">HOME</button>
+            <button type="button" className="bg-black bg-opacity-30 text-slate-300 py-2 px-6 mt-4 rounded-full hover:bg-white hover:text-black">HOME</button>
           </Link>
+        </div>
+        <div className="absolute top-0 right-5 sm:right-20 flex gap-4">
           <Link to="/login">
-            <button type="button" className="bg-black bg-opacity-30 text-slate-100 py-2 px-6 rounded-full hover:bg-black hover:text-orange hover:opacity-80">LOGIN</button>
+            <button type="button" className="bg-black bg-opacity-30 text-slate-300 py-2 px-6 mt-4 rounded-full hover:bg-white hover:text-black">LOGIN</button>
           </Link>
         </div>
       </div>

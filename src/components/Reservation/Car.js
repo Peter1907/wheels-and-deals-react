@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { deleteReservation } from '../../redux/reducers/reservation';
 
 const Car = ({ data }) => {
+  const dispatch = useDispatch();
   const remove = './icons/remove.svg';
+
+  const deleteCar = (id) => {
+    dispatch(deleteReservation(id));
+  };
 
   return (
     <article className="car flex flex-col md:flex-row items-center justify-start text-center bg-orange rounded-xl px-4">
@@ -20,9 +27,9 @@ const Car = ({ data }) => {
         </p>
       </div>
       <div className="social mt-8 mb-4 flex gap-4 rounded-full bg-white bg-opacity-50 py-2 px-6">
-        <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+        <button className="btn btn-primary" type="button" onClick={() => deleteCar(data.id)}>
           <img src={remove} alt="remove" className="w-4 md:w-6" />
-        </a>
+        </button>
       </div>
     </article>
   );
@@ -35,6 +42,7 @@ Car.propTypes = {
     country: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
   }).isRequired,
 };
 
