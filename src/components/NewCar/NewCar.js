@@ -50,6 +50,9 @@ function NewCar() {
     dispatch(addCar(carData));
     setMessage('Car added successfully');
     displayMessage();
+    setTimeout(() => {
+      window.location.href = '/cars';
+    }, 1000);
   };
 
   const handleInputChange = (event) => {

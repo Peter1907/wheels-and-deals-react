@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const API_URL = 'http://localhost:3000/api/cars';
+const API_URL = 'https://wheels-and-deals.onrender.com/api/cars';
 const ADD_CAR = 'wheels_and_deals/cars/ADD_CAR';
 
 const initailState = [

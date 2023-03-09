@@ -35,6 +35,9 @@ const ReservationForm = () => {
       car_id: model,
     };
     dispatch(addReservation(reservationData));
+    setTimeout(() => {
+      window.location.href = '/reserved';
+    }, 1000);
   };
 
   return (
