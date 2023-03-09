@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const API_URL = 'http://localhost:3000/api/login';
+const API_URL = 'https://wheels-and-deals.onrender.com/api/login';
 const POST_LOGIN = 'wheels_and_deals/login/POST_LOGIN';
 const LOGIN_MESSAGE = 'wheels_and_deals/login/LOGIN_MESSAGE';
 

@@ -1,19 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const API_URL = 'http://localhost:3000/api/reservations';
+const API_URL = 'https://wheels-and-deals.onrender.com/api/reservations';
 const DELETE_RESERVATION = 'wheels_and_deals/reservations/DELETE_RESERVATION';
 const ADD_RESERVATION = 'wheels_and_deals/reservations/ADD_RESERVATION';
 const GET_RESERVATIONS = 'wheels_and_deals/reservations/GET_RESERVATIONS';
 
 const initailState = [
-  {
-    city: null,
-    country: null,
-    date: null,
-    name: null,
-    photo: null,
-    price: null,
-  },
 ];
 
 const reservationReducer = (state = initailState, action) => {
