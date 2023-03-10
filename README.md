@@ -80,7 +80,7 @@ The team of developers involved in the creation of this project is made up of 4 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://google.com)
+- [Live Demo Link](https://wheels-and-deals.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
