@@ -9,7 +9,7 @@ import NewReservation from './components/NewReservation/NewReservation';
 import Details from './components/pages/Details';
 import ReservedCars from './components/Reservation/reservedCars';
 
-function App() {
+const App = () => {
   const signed = useSelector((state) => state.loginUsers.signed);
 
   return (
@@ -32,6 +32,6 @@ function App() {
       </Routes>
     </div>
   );
-}
+};
 
 export default App;

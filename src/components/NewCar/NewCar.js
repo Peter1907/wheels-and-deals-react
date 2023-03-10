@@ -10,7 +10,7 @@ import { addCar } from '../../redux/reducers/cars';
 
 const logo = './logo.svg';
 
-function NewCar() {
+const NewCar = () => {
   const dispatch = useDispatch();
   const [carData, setCarData] = useState({
     name: '',
@@ -171,6 +171,6 @@ function NewCar() {
       </form>
     </section>
   );
-}
+};
 
 export default NewCar;
